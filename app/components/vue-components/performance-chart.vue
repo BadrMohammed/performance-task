@@ -89,6 +89,30 @@ export default {
           axisTick: { show: true },
           splitLine: { show: true },
         },
+
+        visualMap: {
+          show: true,
+          dimension: 1,
+          top: 50,
+          right: 0,
+          pieces: [
+            {
+              gt: 0,
+              lt:50,
+              color: 'red'
+            },
+            {
+              gt: 50,
+              lt: 80,
+              color: 'yellow'
+            },
+            {
+              gt: 80,
+              lt: 100,
+              color: 'green'
+            },
+          ]
+        },
         series: [
           {
             data: this.yAxisData,
@@ -110,6 +134,7 @@ export default {
     },
 
     yAxisData() {
+      debugger
       return this.chartData.map((item) => +item.performance * 100);
     },
   },
