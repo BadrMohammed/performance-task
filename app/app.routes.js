@@ -1,11 +1,12 @@
-angular.module('appModule')
+angular
+  .module('appModule')
   .config(($locationProvider) => {
     $locationProvider.html5Mode({
       enabled: false,
       requireBase: false,
     });
   })
-  .config(($stateProvider) => {
+  .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
     // $urlRouterProvider.otherwise('/404');
     $stateProvider
       // .state({
@@ -38,9 +39,11 @@ angular.module('appModule')
         template: '<v-employees-list></v-employees-list>',
       })
 
-      .state('error', {
-        name: 'NotFound',
-        url: '/404',
-        template: '<v-notFound-page></v-notFound-page>',
+      .state({
+        name: 'not-found-page',
+        url: '/404-page',
+        template: '<v-not-found-page></v-not-found-page>',
       });
+    $locationProvider.hashPrefix('');
+    $urlRouterProvider.otherwise('/404-page');
   });

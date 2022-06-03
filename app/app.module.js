@@ -3,8 +3,7 @@ import 'ngVue';
 import 'ngVue/build/plugins.js';
 import PerformancePageComponent from './pages/performance-page/performance-page.vue';
 import PerformanceChartComponent from './components/vue-components/performance-chart.vue';
-import NotFoundPageComponent from './pages/notfound-page.vue';
-
+import NotFoundPageComponent from './pages/not-found-page.vue';
 import HomePageFilterComponent from './pages/home-page/home-page-filter.vue';
 import EmployeesListComponent from './components/employees-list/employees-list.vue';
 

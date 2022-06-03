@@ -6,7 +6,7 @@
  *    without disabling user zoom.
  */
 
- html {
+html {
   box-sizing: border-box;
   font-size: 100%;
   font-family: sans-serif; /* 1 */
@@ -476,7 +476,7 @@ button {
   background: transparent;
   line-height: 1;
 
-  [data-whatinput='mouse'] & {
+  [data-whatinput="mouse"] & {
     outline: 0;
   }
 }
@@ -489,7 +489,6 @@ button {
   display: none !important;
 }
 
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -497,6 +496,16 @@ input::-webkit-inner-spin-button {
 }
 
 /* Firefox */
-input[type=number] {
+input[type="number"] {
   -moz-appearance: textfield;
+}
+
+.c-404-page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
