@@ -9,4 +9,5 @@ angular
     },
   });
 
-function EmployeesListComponent() {}
+function EmployeesListComponent() {
+}
