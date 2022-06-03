@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import PerformanceChartComponent from "../components/vue-components/performance-chart.vue";
-import PerformanceFilterComponent from "../components/vue-components/preformance-filter.vue";
+import PerformanceChartComponent from "../../components/vue-components/performance-chart.vue";
+import PerformanceFilterComponent from "../../components/vue-components/preformance-filter.vue";
 import axios from "axios";
 
 export default {
@@ -32,7 +32,6 @@ export default {
             new Date(item.date_ms) > new Date(start) &&
             new Date(item.date_ms) <= new Date(end)
         );
-        debugger
         this.chartData = filterdChartData;
       }
     },

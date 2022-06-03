@@ -134,7 +134,6 @@ export default {
     },
 
     yAxisData() {
-      debugger
       return this.chartData.map((item) => +item.performance * 100);
     },
   },

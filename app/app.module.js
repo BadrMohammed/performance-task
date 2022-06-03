@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import 'ngVue';
 import 'ngVue/build/plugins.js';
-import PerformancePageComponent from './pages/performance-page.vue';
+import PerformancePageComponent from './pages/performance-page/performance-page.vue';
 import PerformanceChartComponent from './components/vue-components/performance-chart.vue';
 
 angular.module('appModule', [
