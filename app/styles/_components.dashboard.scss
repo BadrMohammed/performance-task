@@ -34,6 +34,67 @@
   padding: 16px 8px;
   border: 1px solid #dcdee3;
   background-color: #e5e9f1;
+
+  .f-filter__form{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .f-filter-input__container{
+      & form{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      & input{
+        margin-inline: 10px;
+        border-radius: 10px;
+        width: 300px;
+        height: 40px;
+      }
+
+      & .label{
+        display: block;
+        margin-inline-start: 10px;
+      }
+
+      & .find-button{
+        background-color: #0099ff;
+        border: 1px solid #0099ff;
+        color: white;
+        padding: 10px 30px;
+        border-radius: 10px;
+      }
+
+      & .find-button:hover{
+        background-color: #fff;
+        border: 1px solid #0099ff;
+        color: #0099ff !important;
+        padding: 10px 30px;
+        border-radius: 10px;
+      }
+
+      & .reset-button{
+        background-color: #fff;
+        border: 1px solid #0099ff;
+        color: #0099ff;
+        padding: 10px 30px;
+        border-radius: 10px;
+      }
+
+      & .reset-button:hover{
+        background-color: #0099ff;
+        border: 1px solid #0099ff;
+        color: white !important;
+        padding: 10px 30px;
+        border-radius: 10px;
+       
+      }
+      
+  }
+}
 }
 
 .c-chart__container {
@@ -49,3 +110,6 @@
   padding: 0 16px;
   border-radius: 4px;
 }
+
+
+
