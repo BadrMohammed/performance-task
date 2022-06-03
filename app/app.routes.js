@@ -1,15 +1,23 @@
 angular.module('appModule')
   .config(($locationProvider) => {
     $locationProvider.html5Mode({
-      enabled: true,
+      enabled: false,
+      requireBase: false,
     });
   })
-  .config(($stateProvider, $urlRouterProvider) => {
-    $urlRouterProvider.otherwise('/404');
+  .config(($stateProvider) => {
+    // $urlRouterProvider.otherwise('/404');
     $stateProvider
+      // .state({
+      //   name: 'app',
+      //   url: '/',
+      //   templateUrl: './pages/home-page/home-page.html',
+      //   controller: 'homeController',
+      //   controllerAs: 'homePageVm',
+      // })
       .state({
         name: 'app',
-        url: '/',
+        url: '/home-page/?search',
         templateUrl: './pages/home-page/home-page.html',
         controller: 'homeController',
         controllerAs: 'homePageVm',
@@ -19,14 +27,20 @@ angular.module('appModule')
         url: '/team-performance',
         template: '<v-performance-page></v-performance-page>',
       })
+      .state({
+        name: 'home-page-filter',
+        url: '/home-page-filter',
+        template: '<v-home-filter-page></v-home-filter-page>',
+      })
+      .state({
+        name: 'employees-list',
+        url: '/employees-list',
+        template: '<v-employees-list></v-employees-list>',
+      })
+
       .state('error', {
         name: 'NotFound',
         url: '/404',
-        template: '<v-404Page-page></v-404Page-page>',
+        template: '<v-notFound-page></v-notFound-page>',
       });
-    // .state('404', {
-    //   name: '404-page',
-    //   url: '/404',
-    //   template: '<v-404Page-page></v-404Page-page>',
-    // });
   });

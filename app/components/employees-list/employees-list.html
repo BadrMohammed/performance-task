@@ -10,6 +10,7 @@
   <div
     class="c-users-list__body"
     ng-repeat="employee in EmployeesListComponentVm.employeesList track by $index">
+    <!-- <v-employees-list :employee="employee"></v-employees-list> -->
     <div>
       <div class="c-users-list__main-info">
         <img class="c-users-list__avatar" ng-src="{{employee.profile.avatar}}" ng-attr-alt="{{employee.profile.name}}">

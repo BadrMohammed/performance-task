@@ -35,32 +35,65 @@
   border: 1px solid #dcdee3;
   background-color: #e5e9f1;
 
-  .f-filter__form{
+  & .c-search-container {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    & .f-filter-input__container{
-      & form{
+    & input {
+      margin-inline: 10px;
+      border-radius: 10px;
+      width: 300px;
+      height: 40px;
+      border: none;
+      text-indent: 10px;
+    }
+    & input:focus{
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    & input:active{
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    & input:hover{
+      border: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+    }
+  }
+  
+
+  .f-filter__form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & .f-filter-input__container {
+      & form {
         display: flex;
         align-items: center;
         justify-content: space-between;
       }
 
-      & input{
+      & input {
         margin-inline: 10px;
         border-radius: 10px;
         width: 300px;
         height: 40px;
       }
 
-      & .label{
+      & .label {
         display: block;
         margin-inline-start: 10px;
       }
 
-      & .find-button{
+      & .find-button {
         background-color: #0099ff;
         border: 1px solid #0099ff;
         color: white;
@@ -68,7 +101,7 @@
         border-radius: 10px;
       }
 
-      & .find-button:hover{
+      & .find-button:hover {
         background-color: #fff;
         border: 1px solid #0099ff;
         color: #0099ff !important;
@@ -76,7 +109,7 @@
         border-radius: 10px;
       }
 
-      & .reset-button{
+      & .reset-button {
         background-color: #fff;
         border: 1px solid #0099ff;
         color: #0099ff;
@@ -84,17 +117,15 @@
         border-radius: 10px;
       }
 
-      & .reset-button:hover{
+      & .reset-button:hover {
         background-color: #0099ff;
         border: 1px solid #0099ff;
         color: white !important;
         padding: 10px 30px;
         border-radius: 10px;
-       
       }
-      
+    }
   }
-}
 }
 
 .c-chart__container {
@@ -110,6 +141,3 @@
   padding: 0 16px;
   border-radius: 4px;
 }
-
-
-

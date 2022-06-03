@@ -5,8 +5,10 @@ angular
 function homePageController(Employees) {
   const homePageVm = this;
   homePageVm.employees = [];
-
+  homePageVm.searchValue = 'x';
   activate();
+
+  console.log(window.location);
 
   function activate() {
     Employees.getEmployees()
