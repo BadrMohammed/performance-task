@@ -3,9 +3,15 @@
     <v-home-filter-page :search-value="homePageVm.search"></v-home-filter-page>
   </div>
 
-  <employees-list employees-list="homePageVm.employees" search-value="homePageVm.search"></employees-list>
+  <employees-list
+    employees-list="homePageVm.employees"
+    search-value="homePageVm.search"
+  ></employees-list>
 
-  <div class="c-dashboard__footer">
-    <button class="c-button">Load More</button>
+  <div
+    class="c-dashboard__footer"
+    ng-if="homePageVm.pagination.current_page<=homePageVm.pagination.pages"
+  >
+    <button class="c-button" ng-click="homePageVm.fetchMore()">{{homePageVm.buttonText}}</button>
   </div>
 </div>
