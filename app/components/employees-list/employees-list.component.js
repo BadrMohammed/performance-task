@@ -6,8 +6,10 @@ angular
     controllerAs: 'EmployeesListComponentVm',
     bindings: {
       employeesList: '<',
+      searchValue: '<',
     },
   });
 
 function EmployeesListComponent() {
+  console.log(window.location.href);
 }

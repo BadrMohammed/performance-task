@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="c-users-list__main-info">
-      <img class="c-users-list__avatar" @src="employee.profile.avatar" @alt="employee.profile.name">
+       <div> {{search-value}} </div>
+
+      <!-- <img class="c-users-list__avatar" :src="{employee.profile.avatar}"> -->
       <!-- <div>{{ employee.profile.name }}</div> -->
     </div>
   </div>
@@ -14,11 +16,10 @@
 <script>
 export default {
   name: "EmployessList",
-  props: ["employee"],
+  props: ["search-value"],
 
-   updated() {
-    debugger
+  updated() {
+    console.log(window.location.search)
   },
-
 };
 </script>
