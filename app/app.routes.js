@@ -3,19 +3,11 @@ angular
   .config(($locationProvider) => {
     $locationProvider.html5Mode({
       enabled: false,
-      // requireBase: false,
+      requireBase: false,
     });
   })
-  .config(($stateProvider) => {
-    // $urlRouterProvider.otherwise('/404');
+  .config(($stateProvider, $urlRouterProvider) => {
     $stateProvider
-      // .state({
-      //   name: 'app',
-      //   url: '/',
-      //   templateUrl: './pages/home-page/home-page.html',
-      //   controller: 'homeController',
-      //   controllerAs: 'homePageVm',
-      // })
       .state({
         name: 'app',
         url: '/home-page/:id',
@@ -47,6 +39,5 @@ angular
         url: '/404-page',
         template: '<v-not-found-page></v-not-found-page>',
       });
-    // $locationProvider.hashPrefix('');
-    // $urlRouterProvider.otherwise('/404-page');
+    $urlRouterProvider.otherwise('/404-page');
   });
