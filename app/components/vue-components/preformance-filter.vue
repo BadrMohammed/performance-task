@@ -11,8 +11,8 @@
           <input type="date" id="end" placeholder="end" value="to" v-model="to" required />
         </div>
         <div>
-          <button type="submit" class="find-button">Find</button>
-          <button type="button" class="reset-button"  v-on:click="fetchChartData">Reset</button>
+          <button type="submit" class="c-button-find">Find</button>
+          <button type="button" class="c-button"  v-on:click="fetchChartData">Reset</button>
 
         </div>
 

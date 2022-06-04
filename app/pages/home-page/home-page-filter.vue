@@ -1,34 +1,44 @@
 <template>
   <div class="c-search-container">
     <input type="search" placeholder="search keyword" name="search" v-model="searchValue" @input="handleFilter" />
-    <button class="c-button" v-on:click="handleClear">clear</button>
+    <button class="c-button-find" v-on:click="handleFind">Find</button>
+    <button class="c-button" v-on:click="handleClear">Clear</button>
   </div>
 </template>
 <script>
 export default {
   name: "HomePageFilter",
-  props: ["employees-list"],
+  props: ["search_value"],
   data() {
     return {
       searchValue: "",
     };
   },
+  mounted() {
+    if (window.location.href.split('=')[1]) { this.searchValue = window.location.href.split('=')[1].toLocaleLowerCase() }
+  },
+
   methods: {
     handleFilter(event) {
-      history.replaceState(
-        null,
-        null,
-        `/home-page?searchvalue=${event.target.value}`
+      // this.search_value=event.target.value;
+      history.pushState(
+        null, null,
+        `/#!/home-page?searchvalue=${event.target.value}`
       );
+    },
+    handleFind() {
+      window.location.reload()
     },
     handleClear() {
       this.searchValue = ""
-      history.replaceState(
+      history.pushState(
         null,
         null,
-        `/home-page`
+        `/#!/home-page`
       );
-    }
+      window.location.reload()
+
+    },
   },
 };
 </script>

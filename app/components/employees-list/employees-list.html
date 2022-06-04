@@ -1,26 +1,57 @@
 <div class="c-users-list">
   <div class="c-users-list__header">
-    <div> Employee </div>
-    <div> Email </div>
-    <div> Adress </div>
-    <div> Start Date </div>
-    <div> Performance Index </div>
-    <div> About </div>
+    <div>Employee</div>
+    <div>Email</div>
+    <div>Adress</div>
+    <div>Start Date</div>
+    <div>Performance Index</div>
+    <div>About</div>
   </div>
+
   <div
     class="c-users-list__body"
-    ng-repeat="employee in EmployeesListComponentVm.employeesList track by $index">
-    <!-- <v-employees-list :employee="employee"></v-employees-list> -->
+    ng-repeat="employee in EmployeesListComponentVm.employeesList track by $index"
+  >
     <div>
       <div class="c-users-list__main-info">
-        <img class="c-users-list__avatar" ng-src="{{employee.profile.avatar}}" ng-attr-alt="{{employee.profile.name}}">
-        <div>{{ employee.profile.name }}</div>
+        <img
+          class="c-users-list__avatar"
+          ng-src="{{employee.profile.avatar}}"
+          ng-attr-alt=""
+        />
+        <div
+          ng-repeat="letter in employee.profile.name.split('') track by $index"
+        >
+          <span
+            ng-style="{ 'background' : (EmployeesListComponentVm.searchValue.includes(letter.toLocaleLowerCase())) ? 'rgba(0,0,0,.5)' : '#fff' }"
+          >
+            {{ letter }}
+          </span>
+        </div>
       </div>
     </div>
-    <div> {{ employee.email }} </div>
-    <div> {{ employee.profile.address }} </div>
-    <div> {{ employee.start_date | date }} </div>
-    <div> {{ employee.performance_index }} </div>
-    <div> {{ employee.profile.about }} </div>
+    <div>{{ employee.email }}</div>
+    <span
+      ng-repeat="word in employee.profile.address.split(' ') track by $index"
+    >
+      <span ng-repeat="letter in word.split('') track by $index">
+        <span
+          ng-style="{ 'background' : (EmployeesListComponentVm.searchValue.includes(letter.toLocaleLowerCase())) ? 'rgba(0,0,0,.5)' : '#fff' }"
+          >{{letter}}</span
+        >
+      </span>
+      &nbsp;
+    </span>
+    <div>{{ employee.start_date | date }}</div>
+    <div>{{ employee.performance_index }}</div>
+    <span ng-repeat="word in employee.profile.about.split(' ') track by $index">
+      <span ng-repeat="letter in word.split('') track by $index">
+        <span
+          ng-style="{ 'background' : (EmployeesListComponentVm.searchValue.includes(letter.toLocaleLowerCase())) ? 'rgba(0,0,0,.5)' : '#fff' }"
+          >{{letter}}</span
+        >
+      </span>
+      &nbsp;
+    </span>
   </div>
 </div>

@@ -3,10 +3,10 @@ angular
   .config(($locationProvider) => {
     $locationProvider.html5Mode({
       enabled: false,
-      requireBase: false,
+      // requireBase: false,
     });
   })
-  .config(($stateProvider, $urlRouterProvider, $locationProvider) => {
+  .config(($stateProvider) => {
     // $urlRouterProvider.otherwise('/404');
     $stateProvider
       // .state({
@@ -18,10 +18,13 @@ angular
       // })
       .state({
         name: 'app',
-        url: '/home-page/?search',
+        url: '/home-page/:id',
         templateUrl: './pages/home-page/home-page.html',
         controller: 'homeController',
         controllerAs: 'homePageVm',
+        params: {
+          id: { squash: true, value: null },
+        },
       })
       .state({
         name: 'team-performance',
@@ -44,6 +47,6 @@ angular
         url: '/404-page',
         template: '<v-not-found-page></v-not-found-page>',
       });
-    $locationProvider.hashPrefix('');
-    $urlRouterProvider.otherwise('/404-page');
+    // $locationProvider.hashPrefix('');
+    // $urlRouterProvider.otherwise('/404-page');
   });
