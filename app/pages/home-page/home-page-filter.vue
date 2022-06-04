@@ -27,16 +27,20 @@ export default {
       );
     },
     handleFind() {
-      window.location.reload()
+      if (window.location.href.split('=')[1]) {
+        window.location.reload()
+      }
     },
     handleClear() {
-      this.searchValue = ""
-      history.pushState(
-        null,
-        null,
-        `/#!/home-page`
-      );
-      window.location.reload()
+      if (window.location.href.split('=')[1]) {
+        this.searchValue = ""
+        history.pushState(
+          null,
+          null,
+          `/#!/home-page`
+        );
+        window.location.reload()
+      }
 
     },
   },
